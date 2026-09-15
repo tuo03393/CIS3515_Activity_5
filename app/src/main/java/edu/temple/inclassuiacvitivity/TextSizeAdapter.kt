@@ -14,7 +14,7 @@ class TextSizeAdapter(private val _numbers: Array<Int>, private val c: Context) 
 
     override fun getItemId(position: Int) = position.toLong()
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?, left: Int): View {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val textView : TextView
 
         if (convertView == null) {
@@ -28,12 +28,10 @@ class TextSizeAdapter(private val _numbers: Array<Int>, private val c: Context) 
 
         }
 
-    override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup?, left: Int): View {
+    override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val textView = (getView(position, convertView, parent) as TextView)
         textView.textSize = _numbers[position].toFloat()
         return textView
     }
-
-
 
 }
