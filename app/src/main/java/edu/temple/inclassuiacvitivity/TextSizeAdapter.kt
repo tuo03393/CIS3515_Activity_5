@@ -18,7 +18,7 @@ class TextSizeAdapter(private val _numbers: Array<Int>, private val c: Context) 
         val textView : TextView
 
         if (convertView == null) {
-            textView = TextView(context = c)
+            textView = TextView(c)
         } else {
             textView = (convertView as TextView)
         }
